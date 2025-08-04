@@ -1,18 +1,24 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { Landing, Home, Profile, Register, Login } from './Pages'
+import { Navbar } from './Components'
 function App() {
 
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+        <div className='flex flex-col min-h-screen'>
+          <Navbar/>
+          <div className='grow'>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+        </div> 
       </BrowserRouter>
     </>
   )

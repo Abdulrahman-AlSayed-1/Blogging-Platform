@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme{
+    /* Color Palette */
+    --color-storm-900:#06141B ; 
+    --color-storm-800:#11212D ; 
+    --color-storm-700:#253745 ; 
+    --color-storm-600:#4A5C6A ; 
+    --color-storm-500:#9BA8AB ; 
+    --color-storm-400:#CCD0CF ; 
+}
+*{
+  font-family: "Open Sans", sans-serif;
+}
+body{
+    background-color: var(--color-storm-900);
+}
+.card-rounded-custom {
+    @apply rounded-b-[130px] rounded-r-none overflow-hidden 
+           md:rounded-tr-[130px] md:rounded-br-[130px] md:rounded-bl-none;
+}
+button{
+    cursor: pointer;
+}

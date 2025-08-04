@@ -1,6 +1,12 @@
 {
-  "users": [
-  ],
+  "users": [],
   "posts": [
+    {
+      "id": 1,
+      "title": "My First Post",
+      "body": "Hello World",
+      "userId": 1,
+      "image": "https://i.pinimg.com/1200x/47/d6/4e/47d64ef869b4c93370b9c506207e7f4a.jpg"
+    }
   ]
 }
