@@ -17,13 +17,19 @@ export default function Login() {
         `http://localhost:3000/users?email=${values.email}&password=${values.password}`
       );
       if (res.data.length === 0) {
-        setErrors({ email: "Invalid email or password" });
+      const emailCheck =await axios.get(
+        `http://localhost:3000/users?email=${values.email}`
+      );
+      if (emailCheck.data.length===0) {
+        setErrors({email:"Email not found"});
+      }else{
+        setErrors({password:"Incorrect Password"});
+
+      }
         setSubmitting(false);
         return;
-      }
-
-      const user = res.data[0];
-      localStorage.setItem("user", JSON.stringify(user));
+      };
+    localStorage.setItem("isLogged" ,true)
       navigate("/home");
     } catch (error) {
       console.error("Login error:", error);
@@ -66,7 +72,7 @@ export default function Login() {
                 component="div"
                 className="text-red-400 text-sm mt-1"
               />
-            </div>
+            </div>  
 
             <button
               type="submit"
