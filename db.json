@@ -1,8 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "1",
+      "username": "nasr",
+      "email": "nasr@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "0f69",
+      "username": "m7mednsr999",
+      "email": "m7mednsr999@gmail.com",
+      "password": "123456"
+    }
+  ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "My First Post",
       "body": "Hello World",
       "userId": 1,

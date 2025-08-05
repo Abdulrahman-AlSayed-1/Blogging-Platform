@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Landing, Home, Profile, Register, Login } from './Pages'
 import { Navbar } from './Components'
 function App() {
