@@ -29,7 +29,9 @@ export default function Login() {
         setSubmitting(false);
         return;
       };
-    localStorage.setItem("isLogged" ,true)
+
+      const user = res.data[0];
+      localStorage.setItem("user", JSON.stringify(user));
       navigate("/home");
     } catch (error) {
       console.error("Login error:", error);

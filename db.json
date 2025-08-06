@@ -11,15 +11,62 @@
       "username": "m7mednsr999",
       "email": "m7mednsr999@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "0607",
+      "username": "Ali Ahmed",
+      "email": "haniabood935@gmail.com",
+      "password": "123456"
     }
   ],
   "posts": [
     {
-      "id": "1",
-      "title": "My First Post",
-      "body": "Hello World",
-      "userId": 1,
-      "image": "https://i.pinimg.com/1200x/47/d6/4e/47d64ef869b4c93370b9c506207e7f4a.jpg"
+      "id": "aa40",
+      "title": "Michell MacBool",
+      "content": "he is very good Itailian actor and won lot of trophies",
+      "image": "https://i.pinimg.com/736x/1e/64/e7/1e64e7e201736bb70b5846d4cbd3050d.jpg",
+      "userId": "Ali Ahmed",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "25d4",
+      "title": "ff",
+      "content": "fff",
+      "image": "fff",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "2165",
+      "title": "jj",
+      "content": "jj",
+      "image": "jjj",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "b12d",
+      "title": "d",
+      "content": "dd",
+      "image": "dd",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "c937",
+      "title": "dd",
+      "content": "dd",
+      "image": "dd",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "3aca",
+      "title": "ff",
+      "content": "ff",
+      "image": "ff",
+      "userId": "0607",
+      "date": "08/06/2025"
     }
   ]
 }
