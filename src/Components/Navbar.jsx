@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom"
 
 export default function Navbar() {
   const navigate  = useNavigate()  
+  
   return (
     <nav className="sticky bg-storm-700/60 px-5 py-3 shadow-lg shadow-storm-600/40">
        <div className="flex justify-between">
           <div>
-            <span  className="text-storm-500">here we will put Logo</span>
+            <span className="text-storm-500">here we will put Logo</span>
             <img src="" alt="" className="w-32"/>
           </div>
           <div>
