@@ -11,21 +11,48 @@
       "username": "m7mednsr999",
       "email": "m7mednsr999@gmail.com",
       "password": "123456"
-    },
-    {
-      "id": "263a",
-      "username": "nasr",
-      "email": "nasr@123",
-      "password": "123456"
     }
   ],
   "posts": [
     {
-      "id": "1",
-      "title": "My First Post",
-      "body": "Hello World",
-      "userId": 1,
-      "image": "https://i.pinimg.com/1200x/47/d6/4e/47d64ef869b4c93370b9c506207e7f4a.jpg"
+      "id": "25d4",
+      "title": "ff",
+      "content": "fff",
+      "image": "fff",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "2165",
+      "title": "jj",
+      "content": "jj",
+      "image": "jjj",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "b12d",
+      "title": "d",
+      "content": "dd",
+      "image": "dd",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "c937",
+      "title": "dd",
+      "content": "dd",
+      "image": "dd",
+      "userId": "0607",
+      "date": "08/06/2025"
+    },
+    {
+      "id": "3aca",
+      "title": "ff",
+      "content": "ff",
+      "image": "ff",
+      "userId": "0607",
+      "date": "08/06/2025"
     }
   ]
 }
