@@ -27,7 +27,7 @@ export default function Navbar() {
     }
   }, [location])
   const handleLogout = ()=>{
-        localStorage.removeItem("isLogged")
+        localStorage.removeItem("user")
         navigate("/login")
   }
   const createPost = ()=>{
@@ -37,10 +37,10 @@ export default function Navbar() {
     setShowForm(cloned)
    }
   return (
-    <nav className="sticky top-0 bg-storm-800/60 px-5 py-2 shadow-md shadow-storm-600/40">
+    <nav className="sticky z-20 top-0 bg-storm-800/60 px-5 py-2 shadow-md shadow-storm-600/40">
        <div className="flex justify-between">
           <Link to="/home">
-            <img src={logo} alt="logo" className="w-16"/>
+            <img src={logo} alt="BlogLoop Logo" className="w-16"/>
           </Link>
           {buttons}
        </div>

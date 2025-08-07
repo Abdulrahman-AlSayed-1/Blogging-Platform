@@ -17,6 +17,13 @@
       "username": "Ali Ahmed",
       "email": "haniabood935@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "ebc4",
+      "username": "Omar",
+      "email": "omar123@gmail.com",
+      "password": "123123",
+      "linkedin": "https://www.linkedin.com/in/abdulrahmanal-sayed/"
     }
   ],
   "posts": [
@@ -43,6 +50,14 @@
       "image": "https://i.pinimg.com/736x/73/f1/f6/73f1f64a312d9af2c059c8044dee4a75.jpg",
       "userId": "0607",
       "date": "08/06/2025"
+    },
+    {
+      "id": "9174",
+      "title": "Cole Palmer Break Record",
+      "content": "⚽𝐂𝐎𝐋𝐄 𝐏𝐀𝐋𝐌𝐄𝐑. 🔵  19 Goals ⚽️ 10 Assists 🎯  What a season this youngster is having, scoring a hat-trick against Manchester United! 🔥",
+      "image": "https://i.pinimg.com/736x/a0/b3/1b/a0b31b80387c94405cdfab0c410f0f96.jpg",
+      "userId": "ebc4",
+      "date": "08/07/2025"
     }
   ]
 }

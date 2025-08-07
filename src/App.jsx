@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Landing, Home, Profile, Register, Login } from './Pages'
 import WithAuth from "./HOC/WithAuth"
-import { Navbar } from './Components'
+import { Footer, Navbar } from './Components'
 import { Toaster } from 'react-hot-toast'
 import { createContext, useState } from 'react'
 export const formContext = createContext()
@@ -38,6 +38,7 @@ function App() {
                  }}
               />
             </div>
+            <Footer/>
           </formContext.Provider>
         </div> 
       </BrowserRouter>

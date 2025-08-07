@@ -3,9 +3,10 @@ import defaultImage from "../../public/Imgs/image_placeholder.png"
 import axios from "axios";
 import { formContext } from "../App";
 export default function PostCard({postData}) {
-  const {showForm ,setShowForm} = useContext(formContext)
-  const {id , userId ,title , content , image , date} = postData
-   const [img ,setImg] = useState(null)   
+   const {showForm ,setShowForm} = useContext(formContext)
+   const {id , userId ,title , content , image , date} = postData
+   const [img ,setImg] = useState(null) 
+   const [username , setUsername] = useState("")
    useEffect(()=>{
     let isMounted = true;
     function isValidImageUrl(url) {
@@ -27,7 +28,18 @@ export default function PostCard({postData}) {
       isMounted = false; // cleanup purpose
      };
    },[image]) 
-
+  useEffect(()=>{
+    const fetchUsername = async()=>{
+      try{
+        const username = (await axios.get(`http://localhost:3000/users?id=${userId}`)).data[0].username
+        setUsername(username)
+      }catch(error)
+      {
+        console.error("Error in Fetching username")
+      }
+    }
+    fetchUsername()
+  },[])
   return (
     <div>
        <div className={"bg-storm-800 rounded-3xl overflow-hidden shadow-xl shadow-storm-700/50 relative"}>
@@ -40,7 +52,7 @@ export default function PostCard({postData}) {
             <p className="text-storm-500">{content}</p>
             <div className="flex justify-between">
                 <span className="text-xs text-storm-500">{date}</span>
-                <span className="text-xs text-storm-500">user: {JSON.parse(localStorage.getItem("user")).username}</span>
+                <span className="text-xs text-storm-500">user: {username}</span>
             </div>
             { JSON.parse(localStorage.getItem("user")).id === userId &&
               <div className="mt-auto flex justify-end gap-3">
