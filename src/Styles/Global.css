@@ -40,3 +40,9 @@ button{
 .animate-pulse-slow {
   animation: pulseSlow 10s ease-in-out infinite;
 }
+.recent-posts::first-letter{
+  font-size: 2.5rem;
+  @media (width < 600px) {
+   font-size: 1.8rem; 
+  }
+}

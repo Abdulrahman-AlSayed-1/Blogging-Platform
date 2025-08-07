@@ -1,10 +1,12 @@
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useContext } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
+import { formContext } from "../App";
 
-const PostForm = ({showFormState}) => {
-  const [showForm ,setShowForm] = showFormState
+const PostForm = () => {
+  const {showForm ,setShowForm} = useContext(formContext)
   const addPost = async(values)=>{
     const date = new Date();
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
@@ -23,11 +25,12 @@ const PostForm = ({showFormState}) => {
         await axios.patch(`http://localhost:3000/posts/${showForm.id}`, {...values})
         toast.success("Post Updated Successfully" ,{
             duration: 1000,
+            position:"top-right",
           })
        }
     }catch(error){
        console.error("Posting error "+ error)
-        toast.error("Failed to save post");
+       toast.error("Failed to save post");
     }
   }  
   return (
@@ -49,16 +52,16 @@ const PostForm = ({showFormState}) => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form className="max-w-md mx-auto p-6 bg-white rounded shadow">
+            <Form className="w-[350px] p-6 bg-storm-900 rounded-2xl shadow">
               <div className="mb-4">
-                <label htmlFor="title" className="block font-semibold mb-1">
+                <label htmlFor="title" className="block font-semibold mb-1 text-storm-400 ">
                   Post Title:
                 </label>
                 <Field
                   id="title"
                   name="title"
                   type="text"
-                  className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring"
+                  className="w-full border-b-1 border-storm-500 px-4 py-2 text-storm-500 focus:outline-none "
                 />
                 <ErrorMessage
                   name="title"
@@ -67,14 +70,14 @@ const PostForm = ({showFormState}) => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="content" className="block font-semibold mb-1">
+                <label htmlFor="content" className="block font-semibold mb-1 text-storm-400">
                   Post Content:
                 </label>
                 <Field
-                  as="textarea"
+                  type="text"
                   id="content"
                   name="content"
-                  className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring h-32 resize-none"
+                  className="w-full border-b-1 border-storm-500 px-4 py-2 text-storm-500 focus:outline-none"
                 />
                 <ErrorMessage
                   name="content"
@@ -83,14 +86,14 @@ const PostForm = ({showFormState}) => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="image" className="block font-semibold mb-1">
+                <label htmlFor="image" className="block font-semibold mb-1 text-storm-400">
                   Post Image URL: <small className="text-xs text-storm-600">optional</small>
                 </label>
                 <Field
                   type="text"
                   id="image"
                   name="image"
-                  className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring"
+                  className="w-full border-b-1 border-storm-500 px-4 py-2 text-storm-500 focus:outline-none "
                 />
                 <ErrorMessage
                   name="image"
@@ -102,7 +105,7 @@ const PostForm = ({showFormState}) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                    className="bg-storm-800 text-white px-4 py-2 rounded hover:bg-storm-800/50"
                   >
                     {isSubmitting ? "is creating..." : "Create"}
                   </button>
@@ -114,7 +117,7 @@ const PostForm = ({showFormState}) => {
                          cloned.type =null
                          setShowForm(cloned)
                     }}
-                    className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                    className="bg-amber-950 text-white px-4 py-2 rounded hover:bg-amber-950/50"
                   >
                    Close
                   </button>
