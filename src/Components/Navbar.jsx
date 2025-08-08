@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import logo from "../../public/Imgs/LogoNoBg.png"
-import { formContext } from "../App"
+import { formContext} from "../App"
 export default function Navbar() {
   const {showForm ,setShowForm} = useContext(formContext)
   const navigate  = useNavigate()  
@@ -31,10 +31,7 @@ export default function Navbar() {
         navigate("/login")
   }
   const createPost = ()=>{
-    const cloned = {...showForm}
-    cloned.show = true
-    cloned.type ="post"
-    setShowForm(cloned)
+    setShowForm({...showForm , show:true , type:"post"})
    }
   return (
     <nav className="sticky z-20 top-0 bg-storm-800/60 px-5 py-2 shadow-md shadow-storm-600/40">

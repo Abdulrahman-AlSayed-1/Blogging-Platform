@@ -12,34 +12,36 @@ function App() {
    const [showForm , setShowForm] = useState({
     show:false,
     type:null,
-    postId:null
+    postId:null,
    })
-
+   
   return (
     <>
       <BrowserRouter>
         <div className='flex flex-col min-h-screen'>
-          <formContext.Provider value={{showForm ,setShowForm}}>
-            <Navbar/>
-            <div className='grow'>
-              <Routes>
-                <Route path="/" element={<Landing />} />
-                <Route path="/home" element={<ProtectedHome/>} />
-                <Route path="/profile" element={<ProtectedProfile />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-              </Routes>
-              <Toaster
-                  toastOptions={{
-                    style: {
-                      background: '#11212D',
-                      color: '#CCD0CF',
-                    },
-                 }}
-              />
-            </div>
-            <Footer/>
-          </formContext.Provider>
+           <formContext.Provider value={{showForm ,setShowForm}}>
+              <Navbar/>
+              <div className='grow'>
+                <Routes>
+                  <Route path="/" element={<Landing />} />
+                  <Route path="/home" element={<ProtectedHome/>} />
+                  <Route path="/profile" element={<ProtectedProfile />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                </Routes>
+                <Toaster
+                    toastOptions={{
+                      style: {
+                        background: '#11212D',
+                        color: '#CCD0CF',
+                      },
+                      position:'top-right',
+                      duration:1500,
+                   }}
+                />
+              </div>
+              <Footer/>
+           </formContext.Provider>
         </div> 
       </BrowserRouter>
     </>

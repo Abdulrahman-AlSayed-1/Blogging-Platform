@@ -3,10 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
-import { formContext } from "../App";
+import { formContext} from "../App";
 
-const PostForm = () => {
+const PostForm = ({postsState}) => {
   const {showForm ,setShowForm} = useContext(formContext)
+  const [posts ,setPosts] = postsState
   const addPost = async(values)=>{
     const date = new Date();
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
@@ -15,26 +16,25 @@ const PostForm = () => {
     try{
       if(showForm.type ==="post") {
          await axios.post("http://localhost:3000/posts", {...values , userId: user.id , date:formattedDate });
-         toast.success("New Post Added Successfully" ,{
-            duration: 1000,
-            position:"top-right",
-          })
+         toast.success("New Post Added Successfully")
+         setPosts( oldPosts =>[...oldPosts , {...values , userId: user.id , date:formattedDate }])
       }
-       else  
-       {
-        await axios.patch(`http://localhost:3000/posts/${showForm.id}`, {...values})
-        toast.success("Post Updated Successfully" ,{
-            duration: 1000,
-            position:"top-right",
-          })
-       }
+      else  
+      {
+        await axios.patch(`http://localhost:3000/posts/${showForm.postId}`, {...values , date:formattedDate})
+        toast.success("Post Updated Successfully")
+        const cloned = [...posts]
+        const postIndex = cloned.findIndex(post=>post.id == showForm.postId)
+        cloned[postIndex] = { ...cloned[postIndex],...values, date:formattedDate} 
+        setPosts(cloned)
+      }
     }catch(error){
-       console.error("Posting error "+ error)
-       toast.error("Failed to save post");
+       console.error("Posting/Patching error "+ error)
+       toast.error("Failed to save post")
     }
   }  
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${!showForm.show ? "hidden" :"block"}`}>
         <Formik
           initialValues={{ title: "", content: "" , image:""}}
           validationSchema={Yup.object({
@@ -43,13 +43,11 @@ const PostForm = () => {
             image: Yup.string()
           })}
           onSubmit={(values, { resetForm }) => {
-            addPost(values)    
+            addPost(values)
             resetForm();
-            const cloned = {...showForm}
-            cloned.show = false
-            cloned.type =null
-            setShowForm(cloned)
+            setShowForm({...showForm ,show : null ,type : null ,postId : null})
           }}
+
         >
           {({ isSubmitting }) => (
             <Form className="w-[350px] p-6 bg-storm-900 rounded-2xl shadow">
@@ -112,10 +110,7 @@ const PostForm = () => {
                   <button
                     type="button"
                     onClick={()=>{
-                         const cloned = {...showForm}
-                         cloned.show = false
-                         cloned.type =null
-                         setShowForm(cloned)
+                         setShowForm({...showForm, type :null , show :false} )
                     }}
                     className="bg-amber-950 text-white px-4 py-2 rounded hover:bg-amber-950/50"
                   >

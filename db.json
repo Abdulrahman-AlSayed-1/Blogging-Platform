@@ -24,6 +24,12 @@
       "email": "omar123@gmail.com",
       "password": "123123",
       "linkedin": "https://www.linkedin.com/in/abdulrahmanal-sayed/"
+    },
+    {
+      "id": "f044",
+      "username": "John",
+      "email": "johm123@gmail.com",
+      "password": "123123"
     }
   ],
   "posts": [
@@ -58,6 +64,22 @@
       "image": "https://i.pinimg.com/736x/a0/b3/1b/a0b31b80387c94405cdfab0c410f0f96.jpg",
       "userId": "ebc4",
       "date": "08/07/2025"
+    },
+    {
+      "id": "8f78",
+      "title": "dd",
+      "content": "dd",
+      "image": "",
+      "userId": "ebc4",
+      "date": "08/08/2025"
+    },
+    {
+      "id": "6382",
+      "title": "dddd",
+      "content": "dd",
+      "image": "",
+      "userId": "f044",
+      "date": "08/08/2025"
     }
   ]
 }

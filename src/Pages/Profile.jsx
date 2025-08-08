@@ -1,5 +1,5 @@
 import axios from "axios";
-import {  useRef } from "react"
+import { useRef } from "react"
 import toast from "react-hot-toast";
 import { FaEnvelope, FaLock, FaUserCheck,FaCheck, FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import profilePicture from "../../public/Imgs/Profile_Picture_Placeholder.png"
@@ -22,26 +22,26 @@ export default function Profile() {
     const selectedRegex = regexMap[platform];
 
     if (!accountLink.trim()) {
-      toast.error("Please Fill Field First", { position: "top-right" });
+      toast.error("Please Fill Field First")
       return;
     }
     else if (!selectedRegex.test(accountLink.trim())) {
-      toast.error(`Incorrect ${platform} URL Format`, { position: "top-right" });
+      toast.error(`Incorrect ${platform} URL Format`)
       return;
     }
 
     try{
       await axios.patch(`http://localhost:3000/users/${user.id}`, {[platform]:accountLink})
-      toast.success(platform + " Account Saved Successfully" , {position:"top-right" , duration:1000})
+      toast.success(platform + " Account Saved Successfully")
       localStorage.setItem("user", JSON.stringify({...user , [platform]:accountLink }))
     }catch(error)
     {
-      toast.error("Error in Storing Account Link" , {position:"top-right" , duration:1000})
+      toast.error("Error in Storing Account Link")
       console.error("Error in Storing Account Link "+ error)
     }
   }
   return (
-    <div className="container mt-15 md:mt-5 mx-auto min-h-[80vh] flex justify-center items-center">
+    <section className="container mt-15 md:mt-5 mx-auto min-h-[80vh] flex justify-center items-center">
        <div className="w-[90%] md:w-auto p-5 bg-storm-800 rounded-2xl relative">
           <h3 className="username-style">{user.username}</h3>
            <div className="flex flex-wrap-reverse text-storm-400 py-5 md:px-5">
@@ -120,6 +120,6 @@ export default function Profile() {
               </div>
           </div>
        </div>   
-    </div>
+    </section>
   )
 }
