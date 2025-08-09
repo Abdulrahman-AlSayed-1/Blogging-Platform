@@ -42,7 +42,7 @@ export default function Profile() {
   }
   return (
     <section className="container mt-15 md:mt-5 mx-auto min-h-[80vh] flex justify-center items-center">
-       <div className="w-[90%] md:w-auto p-5 bg-storm-800 rounded-2xl relative">
+       <div className="w-[90%] md:w-auto p-5 bg-storm-800/50 rounded-2xl relative">
           <h3 className="username-style">{user.username}</h3>
            <div className="flex flex-wrap-reverse text-storm-400 py-5 md:px-5">
              <ul className="space-y-2 w-full md:w-1/2">

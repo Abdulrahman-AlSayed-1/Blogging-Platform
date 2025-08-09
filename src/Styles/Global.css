@@ -13,11 +13,7 @@
   font-family: "poppins", sans-serif;
 }
 body{
-    background-color: var(--color-storm-900);
-}
-.card-rounded-custom {
-    @apply rounded-b-[130px] rounded-r-none overflow-hidden 
-           md:rounded-tr-[130px] md:rounded-br-[130px] md:rounded-bl-none;
+    background-color: var(--color-black);
 }
 button{
     cursor: pointer;
@@ -62,11 +58,18 @@ button{
   height: 2px;
   background: linear-gradient(90deg, transparent,  #ffd700, transparent);
 }
-.welcome-gradient {
+.welcome-gradient  {
   font-size: 3.5rem;
   font-weight: bold;
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
-  background-size: 300% 300%;
+  background-size: 300%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+.home-title{
+  background: linear-gradient(45deg, #060606, #b2b2b2, #000000, #b3b2b1);
+  background-size: 300% ;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 3s ease-in-out infinite;

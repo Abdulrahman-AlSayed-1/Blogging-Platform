@@ -30,6 +30,12 @@
       "username": "John",
       "email": "johm123@gmail.com",
       "password": "123123"
+    },
+    {
+      "id": "796e",
+      "username": "Saad",
+      "email": "saad@gmail.com",
+      "password": "121212"
     }
   ],
   "posts": [
@@ -38,7 +44,7 @@
       "title": "Face Cartoon",
       "content": "a smocking guy",
       "image": "https://i.pinimg.com/736x/c3/f3/29/c3f3292a881bca45baf46443808b9797.jpg",
-      "userId": "0607",
+      "username": "Ali Ahmed",
       "date": "08/06/2025"
     },
     {
@@ -46,7 +52,7 @@
       "title": "oldman",
       "content": "ddwwwwwww",
       "image": "https://i.pinimg.com/1200x/c3/1f/9c/c31f9cf0a8b7dc99a51264956ff42047.jpg",
-      "userId": "0607",
+      "username": "Ali Ahmed",
       "date": "08/06/2025"
     },
     {
@@ -54,7 +60,7 @@
       "title": "Reading Book",
       "content": "chiling guy read book ",
       "image": "https://i.pinimg.com/736x/73/f1/f6/73f1f64a312d9af2c059c8044dee4a75.jpg",
-      "userId": "0607",
+      "username": "Ali Ahmed",
       "date": "08/06/2025"
     },
     {
@@ -62,24 +68,40 @@
       "title": "Cole Palmer Break Record",
       "content": "⚽𝐂𝐎𝐋𝐄 𝐏𝐀𝐋𝐌𝐄𝐑. 🔵  19 Goals ⚽️ 10 Assists 🎯  What a season this youngster is having, scoring a hat-trick against Manchester United! 🔥",
       "image": "https://i.pinimg.com/736x/a0/b3/1b/a0b31b80387c94405cdfab0c410f0f96.jpg",
-      "userId": "ebc4",
+      "username": "Omar",
       "date": "08/07/2025"
     },
     {
-      "id": "8f78",
-      "title": "dd",
-      "content": "dd",
-      "image": "",
-      "userId": "ebc4",
-      "date": "08/08/2025"
+      "id": "ba02",
+      "title": "AI is leading ",
+      "content": "ai and its revolution tell a lot about how our future will look like",
+      "image": "https://i.pinimg.com/1200x/da/36/fa/da36fa592e9e64bad0880e7d396ad034.jpg",
+      "username": "John",
+      "date": "08/09/2025"
     },
     {
-      "id": "6382",
-      "title": "dddd",
-      "content": "dd",
+      "id": "38c4",
+      "title": "saad ",
+      "content": "dddd",
+      "image": "ddd",
+      "username": "Saad",
+      "date": "08/09/2025"
+    },
+    {
+      "id": "9776",
+      "title": "TESTING",
+      "content": "GOODJOB",
       "image": "",
-      "userId": "f044",
-      "date": "08/08/2025"
+      "username": "Saad",
+      "date": "08/09/2025"
+    },
+    {
+      "id": "0523",
+      "title": "THE POWER OF EYE",
+      "content": "Did you know The human eye captures light, focusing images onto the retina, converting them into nerve signals.          ",
+      "image": "https://i.pinimg.com/736x/30/64/c6/3064c6a5015ed46afdb4a192ad9a78a8.jpg",
+      "username": "Ali Ahmed",
+      "date": "08/09/2025"
     }
   ]
 }

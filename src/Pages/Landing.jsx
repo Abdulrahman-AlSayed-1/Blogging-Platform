@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-storm-900 via-storm-800 to-black text-white">
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-storm-400">
    
       <div className="absolute inset-0 animate-pulse-slow pointer-events-none opacity-10">
         <FaFeatherAlt className="absolute top-10 left-10 text-[180px] text-storm-500" />
@@ -20,7 +20,7 @@ export default function LandingPage() {
         <p className="max-w-xl text-lg sm:text-xl text-storm-500 mb-8">
           Write, share, and loop your thoughts in the most elegant blog platform ever built.
         </p>
-        <Link to="/register" className="px-6 py-3 bg-storm-600 hover:bg-storm-500 text-white font-semibold rounded-full transition duration-300 shadow-md">
+        <Link to="/register" className="px-6 py-3 bg-gray-950 hover:bg-gray-900 text-storm-500 font-semibold rounded-full transition duration-300 shadow-md">
           Get Started
         </Link>
       </div>
