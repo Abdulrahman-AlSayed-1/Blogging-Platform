@@ -4,9 +4,10 @@ import WithAuth from "./HOC/WithAuth";
 import { Footer, Navbar } from "./Components";
 import { Toaster } from "react-hot-toast";
 
+const ProtectedHome = WithAuth(Home);
+const ProtectedProfile = WithAuth(Profile);
+
 function App() {
-  const ProtectedHome = WithAuth(Home);
-  const ProtectedProfile = WithAuth(Profile);
   return (
     <>
       <BrowserRouter>
@@ -28,8 +29,7 @@ function App() {
                 },
                 position: "top-right",
                 duration: 1500,
-              }}
-            />
+              }}/>
           </div>
           <Footer />
         </div>

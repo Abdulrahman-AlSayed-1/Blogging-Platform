@@ -12,19 +12,22 @@ export default function Navbar() {
     if (location.pathname === "/home") {
       setButtons(
         <div className="flex justify-end gap-2">
-          <button
+          <button 
+            type="button"
             onClick={createPost}
             className="text-storm-500 border-b-1 text-sm px-4 py-2 rounded-xl hover:bg-storm-900/90"
           >
             Create Post
           </button>
-          <button
+          <button 
+            type="button"
             onClick={() => navigate("/profile")}
             className="text-storm-500 border-b-1 text-sm px-4 py-2 rounded-xl hover:bg-storm-900/90"
           >
             Profile
           </button>
-          <button
+          <button 
+            type="button"
             onClick={handleLogout}
             className="text-storm-500 border-b-1 text-sm px-4 py-2 rounded-xl hover:bg-storm-900/90"
           >
@@ -35,7 +38,8 @@ export default function Navbar() {
     } else if (location.pathname === "/profile") {
       setButtons(
         <div className="flex justify-end">
-          <button
+          <button 
+            type="button"
             onClick={handleLogout}
             className="text-storm-500 border-b-1 text-sm px-4 py-2 rounded-xl hover:bg-storm-900/90"
           >

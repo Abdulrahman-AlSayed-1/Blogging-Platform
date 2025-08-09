@@ -34,10 +34,14 @@ export default function Home() {
   if (!posts.length && fetchStatus === "fulfilled") {
     return (
       <>
-        <div
-          className={`text-center py-10 ${formState.display ? " blur-xl" : ""}`}
-        >
-          <h3 className="text-xl text-storm-400">No posts found</h3>
+        <Main/>
+        <div className="container mx-auto p-5">
+          <h2 className="m-5 text-2xl md:text-3xl font-semibold text-storm-500">
+            Recent Posts
+          </h2>
+          <div className="container h-[400px] mx-auto flex justify-center items-center text-center">
+            <p className="text-2xl font-semibold text-storm-400">No Posts Found</p>
+          </div>
         </div>
         {formState.display && <PostForm />}
       </>

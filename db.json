@@ -16,7 +16,8 @@
       "id": "0607",
       "username": "Ali Ahmed",
       "email": "haniabood935@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "facebook": "https://www.facebook.com/abdelrhman.hani.37/"
     },
     {
       "id": "ebc4",
@@ -77,22 +78,6 @@
       "content": "ai and its revolution tell a lot about how our future will look like",
       "image": "https://i.pinimg.com/1200x/da/36/fa/da36fa592e9e64bad0880e7d396ad034.jpg",
       "username": "John",
-      "date": "08/09/2025"
-    },
-    {
-      "id": "38c4",
-      "title": "saad ",
-      "content": "dddd",
-      "image": "ddd",
-      "username": "Saad",
-      "date": "08/09/2025"
-    },
-    {
-      "id": "9776",
-      "title": "TESTING",
-      "content": "GOODJOB",
-      "image": "",
-      "username": "Saad",
       "date": "08/09/2025"
     },
     {

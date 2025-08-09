@@ -44,6 +44,7 @@ function PostCard({ post }) {
           {JSON.parse(localStorage.getItem("user")).username === username && (
             <div className="mt-auto flex justify-end gap-3">
               <button
+                type="button"
                 className="text-storm-500 text-xs md:text-sm md:px-4 px-3 py-2 bg-storm-800 rounded hover:bg-storm-900/70"
                 onClick={() => {
                   dispatch(displayForm({ type: "patch", postID: id , display:true}));
@@ -52,6 +53,7 @@ function PostCard({ post }) {
                 Edit
               </button>
               <button
+                type="button"
                 className="text-storm-500 text-xs  md:text-sm md:px-4 px-3 py-2 bg-red-900 rounded hover:bg-red-800"
                 onClick={() => {
                   const removePost = () => {
