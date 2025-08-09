@@ -13,7 +13,7 @@ export default function Profile() {
   const storeAccount = async (platform,accountLink)=>{
     const githubRegex =  /https?:\/\/(www\.)?github\.com\/[A-Za-z0-9_-]+(\/[A-Za-z0-9_.-]+)?/gi;
     const facebookRegex = /https?:\/\/(www\.)?facebook\.com\/[A-Za-z0-9_.-]+/gi;
-    const linkedinRegex = /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-_]+\/?$/i
+    const linkedinRegex = /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-_]+\/?$/i;
   
     const regexMap = {
       github: githubRegex,

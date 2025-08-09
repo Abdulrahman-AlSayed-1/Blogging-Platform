@@ -53,6 +53,7 @@ export default function Home() {
 
   return (
     <>
+    
         <main className={`container mx-auto p-5 ${showForm.show ? " blur-xl" : ""}`}>
             <h2 className="m-5 text-2xl md:text-4xl font-semibold text-storm-500 text-center recent-posts">Recent Posts</h2>
             <div className="container mx-auto flex flex-wrap">
