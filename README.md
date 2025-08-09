@@ -11,6 +11,13 @@ Tools and Libraries used in the project:
 5. TypeWriter Animation  
 6. Formik  
 7. JSON Server  
-8. React Hot Toast  
+8. React Hot Toast
+   
+## Contributors
+
+- **Abdulrahman Al-Sayed** 
+- **Mohammed Nasr**  
+
+This project is the result of our joint effort.
 
 =========
