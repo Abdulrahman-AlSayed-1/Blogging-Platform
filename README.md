@@ -22,6 +22,6 @@ This project is the result of our joint effort.
 
 =========
 
-Special thanks to our instructor Ahmed El-Dakr for his great effort and dedication. 
+Special thanks to our instructor Ahmed El-Daker for his great effort and dedication. 
 
 =========
