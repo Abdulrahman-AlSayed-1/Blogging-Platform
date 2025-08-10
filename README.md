@@ -21,3 +21,7 @@ Tools and Libraries used in the project:
 This project is the result of our joint effort.
 
 =========
+
+Special thanks to our instructor Ahmed El-Dakr for his great effort and dedication. 
+
+=========
