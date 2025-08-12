@@ -12,6 +12,7 @@ Tools and Libraries used in the project:
 6. Formik  
 7. JSON Server  
 8. React Hot Toast
+9. React Icons
    
 ## Contributors
 
