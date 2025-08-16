@@ -1,71 +1,81 @@
-import { useContext, useEffect, useState } from "react";
-import defaultImage from "../../public/Imgs/image_placeholder.png"
-import axios from "axios";
-import { formContext } from "../App";
-export default function PostCard({postData}) {
-  const {showForm ,setShowForm} = useContext(formContext)
-  const {id , userId ,title , content , image , date} = postData
-   const [img ,setImg] = useState(null)   
-   useEffect(()=>{
-    let isMounted = true;
-    function isValidImageUrl(url) {
-        return new Promise((resolve) => { //checking if image is valid
-            const img = new Image();            
-            img.src = url;
-            img.onload = () => resolve(true);  
-            img.onerror = () => resolve(false); 
-        });
-    }
-    isValidImageUrl(image).then((isValid) => {
-        if (isValid) {
-         setImg(image)
-        } else {
-         setImg(defaultImage)
-        }
-     });
-    return () => {
-      isMounted = false; // cleanup purpose
-     };
-   },[image]) 
+import { memo, useState } from "react";
+import defaultImage from "../../public/Imgs/image_placeholder.png";
+import { FaUser, FaCalendar } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { deletePost, displayForm } from "../Redux/Slices/CRUD";
 
+function PostCard({ post }) {
+  const deleteStatus = useSelector((state) => state.deleteStatus);
+  const errorMessage = useSelector((state) => state.errorMessage);
+
+  const dispatch = useDispatch();
+  const { id, username, title, content, date, image } = post;
+  const [imgURL, setImgURL] = useState(image || defaultImage);
   return (
     <div>
-       <div className={"bg-storm-800 rounded-3xl overflow-hidden shadow-xl shadow-storm-700/50 relative"}>
-          <div className="w-full h-[500px] md:h-[600px]">
-            <img src={img} alt={title} className="w-full h-full object-cover brightness-50"
-            />
+      <div className="bg-storm-800 rounded-xl overflow-hidden shadow-xl shadow-storm-700/50 relative hover:scale-[1.05] transition-all duration-300">
+        <div className="w-full h-[400px]">
+          <img
+            src={imgURL}
+            alt={title}
+            className={`w-full h-full object-cover ${
+              imgURL === defaultImage ? "invert" : "invert-0"
+            } `}
+            onError={() => setImgURL(defaultImage)}
+          />
+          <div
+            className={`brightness-overlay ${
+              imgURL === defaultImage ? "hidden" : null
+            }`}
+          ></div>
+        </div>
+        <div className="absolute bottom-4 left-2 right-4 flex flex-col gap-3">
+          <h3 className="text-storm-400 font-bold tracking-wide">{title}</h3>
+          <p className="text-storm-500 text-xs">{content}</p>
+          <div className="flex justify-between">
+            <span className="text-xs text-storm-500 flex gap-2">
+              <FaCalendar /> {date}
+            </span>
+            <span className="text-xs text-storm-500 flex gap-2">
+              <FaUser /> {username}
+            </span>
           </div>
-          <div className="absolute bottom-4 left-2 right-4 flex flex-col gap-3">
-            <h3 className="text-xl text-storm-400">{title}</h3>
-            <p className="text-storm-500">{content}</p>
-            <div className="flex justify-between">
-                <span className="text-xs text-storm-500">{date}</span>
-                <span className="text-xs text-storm-500">user: {JSON.parse(localStorage.getItem("user")).username}</span>
+          {JSON.parse(localStorage.getItem("user")).username === username && (
+            <div className="mt-auto flex justify-end gap-3">
+              <button
+                type="button"
+                className="text-storm-500 text-xs md:text-sm md:px-4 px-3 py-2 bg-storm-800 rounded hover:bg-storm-900/70"
+                onClick={() => {
+                  dispatch(displayForm({ type: "patch", postID: id , display:true}));
+                }}
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                className="text-storm-500 text-xs  md:text-sm md:px-4 px-3 py-2 bg-red-900 rounded hover:bg-red-800"
+                onClick={() => {
+                  const removePost = () => {
+                    try {
+                      dispatch(deletePost(id));
+                      if (deleteStatus === "failed") throw errorMessage;
+                      toast.success("Post Deleted Successfully");
+                    } catch (error) {
+                      toast.error(error);
+                      console.error("Error in Post Deletion :" + error);
+                    }
+                  };
+                  removePost();
+                }}
+              >
+                Delete
+              </button>
             </div>
-            { JSON.parse(localStorage.getItem("user")).id === userId &&
-              <div className="mt-auto flex justify-end gap-3">
-                  <button className="text-storm-500 text-xs md:text-sm md:px-4 px-3 py-2 bg-storm-800 rounded hover:bg-storm-900/70" onClick={()=>{
-                      const cloned = {...showForm}
-                      cloned.show = true
-                      cloned.type ="patch"
-                      cloned.id = id
-                      setShowForm(cloned)
-                  }}>Edit</button>
-                  <button className="text-storm-500 text-xs  md:text-sm md:px-4 px-3 py-2 bg-red-900 rounded hover:bg-red-800" onClick={()=>{
-                      const deletePost = async ()=>{
-                        try{
-                        await axios.delete(`http://localhost:3000/posts/${id}`)
-                        } catch(error)
-                        {
-                          console.error("Post deletion Error "+ error)
-                        }
-                      }
-                      deletePost()
-                  }}>Delete</button>
-              </div>
-            }
-          </div>
-        </div> 
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
+export default memo(PostCard);

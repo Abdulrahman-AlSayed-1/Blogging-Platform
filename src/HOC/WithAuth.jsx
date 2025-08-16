@@ -7,10 +7,7 @@ const WithAuth = (WrappedComponent) => {
     const isAuthenticated = !!localStorage.getItem("user"); 
 
     if (!isAuthenticated) {
-      toast.error("You must Login to access" ,{
-          duration: 1500,
-          position:"top-right",
-      })
+      toast.error("You must Login to access")
       setTimeout(()=>{
         navigate("/login");
       }, 2000)

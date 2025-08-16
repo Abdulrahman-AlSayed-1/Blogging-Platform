@@ -5,35 +5,26 @@ import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-storm-900 via-storm-800 to-black text-white relative overflow-hidden">
-      
-      <div className="absolute inset-0 opacity-10 animate-pulse-slow pointer-events-none">
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-storm-400">
+   
+      <div className="absolute inset-0 animate-pulse-slow pointer-events-none opacity-10">
         <FaFeatherAlt className="absolute top-10 left-10 text-[180px] text-storm-500" />
         <FaPenNib className="absolute top-1/4 right-20 text-[160px] text-storm-600" />
         <BsStars className="absolute bottom-10 left-1/3 text-[220px] text-storm-400" />
         <FaRegNewspaper className="absolute bottom-24 right-10 text-[200px] text-storm-700" />
       </div>
 
-      <main className="flex-1 flex items-center justify-center relative z-10 px-6 py-12">
-        <div className="text-center max-w-2xl">
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-wide text-storm-500 mb-6 drop-shadow-lg">
-            Welcome to <span className="text-storm-400 ">BlogLoop</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-storm-300 mb-8">
-            Write, share, and loop your thoughts in the most elegant blog platform ever built.
-          </p>
-          <Link
-            to="/register"
-            className="inline-block px-6 py-3 bg-storm-600 hover:bg-storm-500 text-white font-semibold rounded-full transition duration-300 shadow-md"
-          >
-            Get Started
-          </Link>
-        </div>
-      </main>
-        
-...
-
-
-    </div>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+        <h1 className="text-5xl text-storm-500 sm:text-6xl font-extrabold tracking-wide drop-shadow-lg mb-6">
+          Welcome to <span className="text-storm-500">BlogLoop</span>
+        </h1>
+        <p className="max-w-xl text-lg sm:text-xl text-storm-500 mb-8">
+          Write, share, and loop your thoughts in the most elegant blog platform ever built.
+        </p>
+        <Link to="/register" className="px-6 py-3 bg-gray-950 hover:bg-gray-900 text-storm-500 font-semibold rounded-full transition duration-300 shadow-md">
+          Get Started
+        </Link>
+      </div>
+    </section>
   );
 }

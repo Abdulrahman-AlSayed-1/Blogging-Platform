@@ -39,8 +39,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-storm-900">
-      <div className="bg-storm-800  p-8 rounded-4xl shadow-xl w-full max-w-md">
+    <div className="flex items-center justify-center min-h-[80vh]">
+      <div className="bg-storm-900  p-8 rounded-4xl shadow-xl w-[80%] md:w-[50%] lg:w-[33%]">
         <h2 className="text-3xl font-bold text-center text-storm-400 mb-6">Login</h2>
         <Formik
           initialValues={{ email: "", password: "" }}
@@ -53,7 +53,7 @@ export default function Login() {
                 name="email"
                 type="email"
                 placeholder="Email"
-                className="w-full px-4 py-2 bg-storm-700 text-storm-400 border border-storm-600 rounded focus:outline-none focus:ring-2 focus:ring-storm-500"
+                className="w-full px-4 py-2 text-storm-400 border-b-1 focus:outline-none"
               />
               <ErrorMessage
                 name="email"
@@ -67,7 +67,7 @@ export default function Login() {
                 name="password"
                 type="password"
                 placeholder="Password"
-                className="w-full px-4 py-2 bg-storm-700 text-storm-400 border border-storm-600 rounded focus:outline-none focus:ring-2 focus:ring-storm-500"
+                className="w-full px-4 py-2 text-storm-400 border-b-1 focus:outline-none"
               />
               <ErrorMessage
                 name="password"
@@ -78,7 +78,7 @@ export default function Login() {
 
             <button
               type="submit"
-              className="w-full bg-storm-500 hover:bg-storm-400 text-storm-900 font-semibold py-2 rounded transition duration-200"
+              className="w-full bg-storm-400 hover:bg-storm-500 text-storm-900 font-semibold py-2 rounded transition duration-200"
             >
               Login
             </button>
