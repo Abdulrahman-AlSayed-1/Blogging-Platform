@@ -49,7 +49,7 @@ function Footer() {
             <li className="flex justify-center bg-storm-400 items-center w-8 h-8 rounded-full hover:rotate-360 transition-all duration-500 ">
               <a
                 className="text-blue-700 text-lg"
-                href="#"
+                href="https://www.linkedin.com/in/mohamed-nasr-7730a7296/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -59,7 +59,7 @@ function Footer() {
             <li className="flex justify-center items-center w-8 h-8  bg-storm-400 rounded-full hover:rotate-360 transition-all duration-500">
               <a
                 className="text-lg text-gray-950"
-                href="#"
+                href="https://github.com/M7mednsr?tab=repositories"
                 rel="noopener noreferrer"
                 target="_blank"
               >
